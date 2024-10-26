@@ -2,7 +2,7 @@
 <a href="{% url 'add_category' %}">Add Category</a>
 <ul>
     {% for category in categories %}
-        <li>{{ category.name }} -
+        <li><a href="{%url 'category_detail' category.slug%}">{{ category.name }}</a> -
             <a href="{% url 'edit_category' category.id %}">Edit</a> |
             <a href="{% url 'delete_category' category.id %}">Delete</a>
         </li>

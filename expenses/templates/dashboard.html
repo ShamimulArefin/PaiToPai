@@ -1,0 +1,24 @@
+<h2>Expense Summary Dashboard</h2>
+
+<div>
+    <h3>Total Expenses: {{ total_expenses }}</h3>
+
+    <h4>Expenses by Category</h4>
+    <ul>
+        {% for summary in category_summaries %}
+        <li>{{ summary.category__name }}: ${{ summary.total }}</li>
+        {% empty %}
+        <li>No categories found.</li>
+        {% endfor %}
+    </ul>
+
+    <h4>Monthly Expenses ({{ current_year }})</h4>
+    <ul>
+        {% for month, total in monthly_expenses.items %}
+        <li>{{ month }}: ${{ total }}</li>
+        {% empty %}
+        <li>No expenses found for this year.</li>
+        {% endfor %}
+    </ul>
+</div>
+
